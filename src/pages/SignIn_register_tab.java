@@ -31,4 +31,12 @@ public class SignIn_register_tab {
 		return driver.findElement(By.name("submit_attempt"));
 	}
 
+	public WebElement staySignIn() {
+		return driver.findElement(By.id("persisent"));
+	}
+
+	public WebElement signInBtn() {
+		return driver.findElement(By.name("submit_attempt"));
+	}
+
 }
