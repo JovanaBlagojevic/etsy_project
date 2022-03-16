@@ -34,6 +34,8 @@ public class test_five {
 	@Test
 	public void test() {
 		home.signIn().click();
+		driver.navigate().refresh();
+		home.signIn().click();
 		signin.email().sendKeys("jojo.thefunsideoflife@gmail.com");
 		signin.password().sendKeys("1234567");
 		signin.staySignIn().click();

@@ -48,6 +48,7 @@ public class test_three {
 		WebElement remove = driver.findElement(
 				By.xpath("//*[@id='user-lists-overlay']/div/div/div[1]/fieldset/div/span[2]/label/div[2]/span"));
 		js.executeScript("arguments[0].click()", remove);
+		driver.navigate().refresh();
 	}
 
 }

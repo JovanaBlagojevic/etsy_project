@@ -48,4 +48,11 @@ public class Cart_page {
 		return driver.findElement(By.className("proceed-to-checkout"));
 	}
 
+	public String shipping() {
+		return driver
+				.findElement(
+						By.xpath("//*[@id=\"multi-shop-cart-list\"]/div[1]/div/div[1]/ul/li/div[4]/div[2]/div/div"))
+				.getText();
+	}
+
 }

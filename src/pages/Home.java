@@ -31,4 +31,5 @@ public class Home {
 	public WebElement clothing() {
 		return driver.findElement(By.xpath("//*[@id=\"desktop-category-nav\"]/div[1]/div/ul/li[2]/a"));
 	}
+	
 }

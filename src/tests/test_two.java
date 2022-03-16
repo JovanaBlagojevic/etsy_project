@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
+import pages.Cart_page;
 import pages.Clothing_page;
 import pages.Home;
 import pages.Women_clothing;
@@ -24,8 +27,10 @@ public class test_two {
 	protected Home home;
 	protected Clothing_page clothing;
 	protected Women_clothing women;
+	protected Cart_page cart;
 	String baseUrl = "https://www.etsy.com";
 	Actions action = new Actions(driver);
+	SoftAssert sa = new SoftAssert();
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -60,6 +65,14 @@ public class test_two {
 		dropdown.selectByValue("544530076");
 
 		driver.findElement(By.xpath("//*[@id=\"listing-page-cart\"]/div[3]/div/div[2]/div/form/div/button")).click();
+
+		WebElement addToCart = driver
+				.findElement(By.xpath("//*[@id=\"listing-page-cart\"]/div[3]/div/div[2]/div[2]/form/div/button"));
+		addToCart.click();
+		Thread.sleep(340);
+		
+		sa.assertTrue(cart.shipping().contains("Free shipping"), "[ERROR] Check your filters!");
+		
 	}
 
 }

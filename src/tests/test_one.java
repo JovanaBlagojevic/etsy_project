@@ -5,9 +5,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -41,6 +43,12 @@ public class test_one {
 		srt.password().sendKeys("123456789");
 		srt.registerBtn().click();
 		Thread.sleep(300);
+		wait.until(ExpectedConditions
+				.visibilityOf((WebElement) By.xpath("//*[@id=\"gnav-header-inner\"]/div[4]/nav/ul/li[3]/div/button")));
+
+		Boolean isPresented = driver
+				.findElements(By.xpath("//*[@id=\"gnav-header-inner\"]/div[4]/nav/ul/li[3]/div/button")).size() > 0;
+		Assert.assertTrue(isPresented, "[ERROR: Account wasn't created!]");
 	}
 
 }
