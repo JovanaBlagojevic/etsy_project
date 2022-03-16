@@ -13,7 +13,8 @@ import org.testng.annotations.Test;
 import pages.Home;
 import pages.SignIn_register_tab;
 
-public class test_five {
+public class Login_test {
+	//Log in to Etsy website 
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor js;

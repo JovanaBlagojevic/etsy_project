@@ -20,7 +20,8 @@ import pages.Clothing_page;
 import pages.Home;
 import pages.Women_clothing;
 
-public class test_two {
+public class Filtering_test {
+	//Filtering and adding items to cart by using "All filters" button 
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor js;

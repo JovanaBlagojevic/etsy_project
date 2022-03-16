@@ -15,7 +15,8 @@ import org.testng.annotations.Test;
 import pages.Favorites_page;
 import pages.Home;
 
-public class test_three {
+public class Favorites_test {
+	//Remove from Favorites
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor js;

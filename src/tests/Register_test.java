@@ -16,7 +16,8 @@ import org.testng.annotations.Test;
 import pages.Home;
 import pages.SignIn_register_tab;
 
-public class test_one {
+public class Register_test {
+	//Registering on Etsy website 
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor js;

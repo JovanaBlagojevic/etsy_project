@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 import pages.Cart_page;
 import pages.Home;
 
-public class test_four {
+public class Cart_test {
+	//Deleting products from your cart  
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor js;
